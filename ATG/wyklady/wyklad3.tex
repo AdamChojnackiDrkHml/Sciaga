@@ -1,0 +1,59 @@
+\begin{definicja}
+    Jeśli gra $G$ spełnia warunek: $(\forall s \in S)(\sum\limits_{i \in [n]}u_i = 0)$,
+    to taką grę nazywamy \textbf{gra o sumie zerowej}. 
+    Jeśli $K$ jest ciałem skalarów nad $V$, to grę $G$, która spełnia warunek 
+    $(\exists c \in K)(\forall s \in S)((\sum\limits_{i \in [n]}u_i = c))$
+    nazywamy \textbf{grą o sumie stałej}.
+\end{definicja}
+\begin{fakt}
+    Każda gra o sumie zerowej jest grą o sumie stałej.
+\end{fakt}
+\begin{twierdzenie}
+    Każda gra o sumie niezerowej na $n$ graczy, jest równoważna z grą o sumie zerowej dla $n+1$ graczy.
+\end{twierdzenie}
+\begin{fakt}
+    W grzez o sumie stałej, każda strategia jest Pareto-optymalna.
+\end{fakt}
+\begin{definicja}
+    Rozważmy grę dwuosobową o sumie stałej $c$, w której $S_1, S_2$ są zwartymi podzbiorami $\bb{R}^k$
+    (dla pewnego $k \in \bb{N}$).
+    \textbf{Wartością dolną} gry $\underline{v}$ nazywamy $\sup_{s_1 \in S_1} \inf_{s_2 \in S_n} u_1(s_1, s_2)$.
+    \textbf{Wartością górną} gry $\overline{v}$ nazywamy $\inf_{s_1 \in S_1} \sup_{s_2 \in S_n} u_1(s_1, s_2)$.
+    Jeśli $\overline{v} = \underline{v}$, to mówimy, że gra ma \textbf{wartość} $v$.
+    Profil strategii, który realizuje wartość gry, nazywamy \textbf{punktem siodłowym}.
+    Profil strategii $(s_1, s_2)$ taki, że $s_1$ realizuje wartość dolną, a $s_2$ górną, nazywamy \textbf{strategią minimaksową/maksiminową}
+\end{definicja}
+\begin{twierdzenie}
+    Dla gry dwuosobowej o sumie stałej:
+    \begin{enumerate*}[label=\roman*)]
+        \item $\underline{v} \leq \overline{v}$,
+        \item Gra ma równowagę Nasha $\Rightarrow$ $\underline{v} = \overline{v}$ i każdy punkt siodłowy jest równowagą Nasha.
+    \end{enumerate*}
+\end{twierdzenie}
+\begin{definicja}
+    Profile strategii, które mają wartość z przedziału $[\underline{v}, \overline{v}]$, nazywamy \textbf{strategiami bezpieczeństwa}.
+\end{definicja}
+\begin{definicja}
+    Niech $(P = [n], S, u)$, będzie grą skończoną w postaci normalnej.
+    \textbf{Strategią mieszaną gracza} $i$ nazywamy rozkład prawdopodobieństwa $\pi_i : S_i \rightarrow [0, 1]$.
+    \textbf{Strategią mieszaną gry} nazywamy rozkład produktowy $\pi := \bigtimes_{i=0}^{n}\pi_{i} : S \rightarrow [0, 1]$.
+    Wypłatą gracza $j$ jest wtedy wartość oczekiwana: $u_j(\pi) = \sum\limits_{(s_j \in S_j)}\sum\limits_{s_{-j} \in S_{-j}} u_j(\langle s_j, s_{-j} \rangle)\pi(\langle s_j, s_{-j} \rangle)$.
+    Zbiór wszystkich rozkładów gracza $i$ będziemy oznaczać przez $\Delta_i$, a ich produkt przez $\Delta$.
+\end{definicja}
+\begin{definicja}
+    \textbf{Mieszaną równowagą Nasha} nazywamy rozkład łączny $\pi^{*}$ taki, że:
+    $(\forall i \in [n])(\forall \pi_i \in \Delta_i)(u_i(\pi^{*}) \geq u_i(\langle \pi_i, \pi_{-i}^{*} \rangle))$.
+\end{definicja}
+\begin{twierdzenie}
+    Każda czysta równowaga Nasha $s^{*} \in S$ jest mieszaną równowagą Nasha.
+\end{twierdzenie}
+\begin{definicja}
+    \textbf{Nośnikiem} rozkładu łącznego strategii mieszanej $\pi$ nazywamy zbiór
+    $S(\pi) = \{s \in S : \pi(s) > 0\}$.
+    \textbf{Nośnikiem} rozkładu strategii mieszanej gracza $\pi_i$ nazywamy zbiór
+    $S(\pi_i) = \{s_i \in S_i :\pi_i(s_i) > 0\}$.
+\end{definicja}
+\begin{twierdzenie}
+    Niech $\pi^{*} \in \Delta$ będzie \textbf{MNE}.
+    Wtedy $(\forall s_i \in S(\pi_{i}^{*}))(u_i(\langle s_i, \pi_{-i}^{*} \rangle) = u_i(\pi))$
+\end{twierdzenie}
