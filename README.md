@@ -2,9 +2,9 @@
 
 ### ATG
 Wykłady:
-1. Adam
-2. Adam
-3. Adam
+1. ~~Adam~~
+2. ~~Adam~~
+3. ~~Adam~~
 4. Paweł
 5. Paweł
 6. Paweł
