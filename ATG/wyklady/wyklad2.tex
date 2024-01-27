@@ -1,0 +1,54 @@
+\begin{definicja}
+    Niech $P=\{p_1, p_2, \dots, p_n\}$ będzie zbiorem $n$ graczy. Każdy z graczy $p_i, i \in [n]$,
+    ma swój zwarty zbiór strategii (\textbf{czystych}) $S_i$.
+    W każdej realizacji gry, każdy z graczy $p_i$ wybiera swoją strategię $s_i \in S_i$,
+    tworząc w ten sposób wektor strategii $s = (s_1, s_2, \dots, s_n)$.
+    Wtedy $S = \bigtimes_{n=1}^{n} S_i$ to zbiór możliwych \textbf{profili strategii}(wektorów strategii). 
+    Każdy profil strategii $s$ jest jednznacznie wyznacza wektor wypłat $u(s) = (u_1(s), \dots, u_n(s))$ ($u: S \rightarrow V^n$, gdzie $V$ jest prz.l.),
+    czyli zysków (lub strat) poszczególnych graczy. Każda z $u_i$ jest nazywana \textbf{funkcją wypłat} dla gracza $p_i$. 
+    $(P, S, u)$ nazywamy \textbf{grą w postaci normalnej}. Jeśli $|A| < \aleph_0$, to mówimy, że gra jest skończona.
+\end{definicja}
+
+\begin{definicja}
+    Niech $P = [n]$. Dla danego profilu strategii $s \in S$ określamy $s_{-i}$,
+    jako profil strategii $(s_1, \dots, s_{i-1}, s_{i+1}, \dots, s_n)$ z pominięciem strategii czystej $i$-tego gracza.
+    Będziemy wtedy zapisywać skrótowo $s = \langle s_i, s_{-i} \rangle$.
+    Mówimy, że statega czysta $s_{i}^{*}$:
+    \begin{enumerate*}[label=\roman*)]
+        \item \textbf{słabo dominuje} $s_{i}'$ jeśli $(\forall s \in S)(u_i(\langle s_{i}^{*}, s_{-i} \rangle) \geq u_i(\langle s_{i}^{'}, s_{-i} \rangle))$
+        \item \textbf{silnie dominuje} $s_{i}'$ jeśli $(\forall s \in S)(u_i(\langle s_{i}^{*}, s_{-i} \rangle) > u_i(\langle s_{i}^{'}, s_{-i} \rangle))$
+        \item \textbf{najlepszą odpowiedzią na} $s_{-i}$ $(\forall s_i \in S_i)(u_i(\langle s_{i}^{*}, s_{-i} \rangle) \geq u_i(\langle s_{i}, s_{-i} \rangle))$
+    \end{enumerate*}
+    Mówimy, że profil strategii $s^{*} = (s_{1}^{*}, \dots, s_{n}^{*}) \in S$:
+    \begin{enumerate*}[label=\roman*)]
+        \item jest \textbf{strategią słabo dominującą}: $(\forall i \in [n])(\forall s \in S)(u_i(\langle s_{i}^{*}, s_{-i} \rangle) \geq u_i(s))$
+        \item jest \textbf{strategią silnie dominującą}: $(\forall i \in [n])(\forall s \in S, s_i \neq s_{i}^{*})(u_i(\langle s_{i}^{*}, s_{-i} \rangle)$ $> u_i(s))$
+        \item jest \textbf{równowagą Nasha w strategiach czystych}: $(\forall i \in [n]) (s_{i}^{*}$ jest najlepszą odpowiedzią na $s_{-i}^{*})$.
+        \item jest \textbf{optimum Pareta}: $(\forall s \in S\setminus{s^{*}})(\{[(\exists j \in [n])u_{j}(s) < u_{j}(s^{*})]$ $\lor [u(s) = u(s^{*})]\})$.
+    \end{enumerate*}
+    Zbiór wszystkich optimum Pareta, jest nazywany \textbf{frontem Pareta}.
+\end{definicja}
+\begin{fakt}
+    Dla każdego gracza, słaba dominacja w sensie strategii czystych jest relacją częsciowego porządku.
+\end{fakt}
+\begin{fakt}
+    $s \in S$ jest rowiązaniem (słabym) $\Leftrightarrow$ $(\forall p_i \in P)$ ($s_i$ słabo dominuje wszystkie inne strategie tego gracza).
+\end{fakt}
+\begin{fakt}
+    Jeśli $s \in S$ jest rozwiązaniem słabym, to dla każdego gracza $p_i$, $s_i$ jest najlepszą odpowiedzią,
+    na każdy możliwy profil strategii innych graczy $s_{-i}'$. W szczególności jest równowagą Nasha dla strategii czystych.
+\end{fakt}
+\begin{fakt}
+    Jeśli istnieją strategie czyste ściśle zdominowane, usuwaj je, dopóki się da. 
+    W wyniku takiego algorytmu otrzymamy uproszczoną grę.
+    Nawet gdy dojdziemy do gry z jedną strategią, to nie musi być to strategia dominująca nawet w słabym sensie.
+\end{fakt}
+\begin{twierdzenie}
+    Jeśli istnieje rozwiązanie ściśle dominujące, to jest ono jedno i algorytm eliminacji prowadzi do tego rozwiązania
+\end{twierdzenie}
+\begin{definicja}
+    \textbf{Gra koordynacyjna} to gra, w której gracz ma identyczny zbiór strategii czystych oraz wypłata gracza
+    $p \in P$ jest niemalejącą funkcją ze względu na rosnącą liczbę graczy, która wybierze tę samą czystą strategię. 
+    \textbf{Gra anty-koordynacyjna} analogicznie ma nierosnącą funkcję.
+    \textbf{Gra dysokoordynacyjna} dla dwóch osób, jeden z graczy dąży do koordynacji, drugi  do antykoordynacji strategii czystych.
+\end{definicja}

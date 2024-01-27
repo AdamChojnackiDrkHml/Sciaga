@@ -14,6 +14,8 @@
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{mathabx}
+
 \usepackage{tikz}
 \def\thm@space@setup{\thm@preskip=0pt
 \thm@postskip=0pt}
@@ -110,103 +112,19 @@
 \begin{document}
 
 \begin{multicols*}{4}
-    \begin{definicja}{Przestrzeń topologiczna}
-        Para $(X, \Cal{O})$, gdzie $X$ jest zbiorem, a $\Cal{O} \subset \Cal{P}(X)$ (\textbf{topologia}):
-        \begin{enumerate*}[label=\roman*]
-            \item $\emptyset, X \in \Cal{O}$,
-            \item $U, V \in \Cal{O} \Rightarrow U \cap V \in \Cal{O}$,
-            \item $\Cal{T} \subset \Cal{O} \Rightarrow \bigcup\Cal{T} \in \Cal{O}$
-        \end{enumerate*}
-        Elementy $\Cal{O}$ nazywamy \textbf{zbiorami otwartymi}. Ich dopełnienia w $X$ nazywamy \textbf{zbiorami domkniętymi}.
-    \end{definicja}
+    \input{wyklady/wyklad1}
+    \input{wyklady/wyklad2}
+    \input{wyklady/wyklad3}
+    \input{wyklady/wyklad4}
+    \input{wyklady/wyklad5}
+    \input{wyklady/wyklad6}
+    \input{wyklady/wyklad7}
+    \input{wyklady/wyklad8}
+    \input{wyklady/wyklad9}
+    \input{wyklady/wyklad10}
+    \input{wyklady/wyklad11}
 
-    \begin{definicja}
-        W przestrzeni topologicznej $(X, \Cal{O})$ mówimy, że funkcja $f$ jest ciągła $\Leftrightarrow$ $\forall_{(\Cal{U} \in \Cal{O})}(f^{-1}[\Cal{U}] \in \Cal{O})$.
-    \end{definicja}
 
-    \begin{definicja}
-        Ciąg ${(x_{n})}_{n}$ w przestrzeni 
-        metrycznej 
-        $(X, d)$ nazywamy \textbf{ciągiem Cauchy'ego}, 
-        gdy:
-        $((\forall \varepsilon > 0)(\exists N_0)(\forall n, m > N_0) d(x_n, x_m) < \varepsilon)$
-        Mówimy, że prz.m. jest \textbf{zupełna}, jeśli każdy ciąg Cauchy'ego jest zbieżny.
-    \end{definicja}
-
-    \begin{twierdzenie}{Banach, o punkcie stałym, kontrakcji}
-        Niech $(X, d)$ zupełna prz.m., $f: X \rightarrow X$ będzie \textbf{kontrakcją/odwzorowaniem zwężającym} ze stałą $\alpha < 1$.
-        $(\forall x, y \in X)d(f(x), f(y)) < \alpha\cdot d(x, y)$. Wtedy $f$ ma dokładnije jeden punkt stały $x^*$, $f(x^*)=x^*$.
-        Jeśli $x_0 \in X$ jest dowolnym elementem $X$, to ciąg $x_{n+1} = f(x_n)$, zbiega do $x^*$.
-    \end{twierdzenie}
-
-    \begin{definicja}
-        Podzbiór przestrzeni topologicznej $(X, \Cal{D})$ nazywamy \textbf{zwartym}, jeśli z dowolnego pokrycia ${\{U_t\}}_{t\in T}$
-        $X$ zbiorami otwartmi, można wybrać podpokrycie ${\{U_{t_i}\}}_{i = 1}^{n}$ skończone.
-    \end{definicja}
-
-    \begin{fakt}
-        W przestrzeni $\bb{R}^k$ z naturalną topologią, zwartość podprzestrzeni jest równowazna z jej domkniętością i ograniczoniością.
-    \end{fakt}
-
-    \begin{fakt}
-        W prz.m. zwartość zbioru $K$ jest równoznaczna z tym, że dla każdego ciągu w $K$, istnieje podciąg zbieżny do pewnego punktu $x \in K$.
-    \end{fakt}
-
-    \begin{fakt}
-        W prz.m. każdy zbiór zwarty jest zupełny.
-    \end{fakt}
-
-    \begin{twierdzenie}
-        Niech $K$, będzie zbiorem zwartym. Każda funkcja ciągła $f: K \rightarrow R$ osiąga swoje kresy (maksima i minima o ile istnieją).
-    \end{twierdzenie}
-
-    \begin{definicja}
-        W przestrzeni liniowej $\bb{V}$ nad ciałem $\bb{R}$, niech $n \in \bb{N}, x_i \in \bb{V}$ i $\lambda_i \in K$, dla $i \in [n]$,
-        będą takie, że $\sum\limits_{i=1}^{n}\lambda_i = 1$, gdzie $(\forall i \in [n])(\lambda_i \int [0, 1])$. Mówimy wtedy, że punkt postaci
-        $\sum\limits_{i=0}^{n} \lambda_i x_i \in \bb{V}$ jest \textbf{kobinacją wypukłą} punktów ${(x_i)}^{n}_{i=1}$ z wagami ${(\lambda_i)}^{n}_{i=1}$.
-    \end{definicja}
-
-    \begin{definicja}
-        Podzbiór prz. l. $X \subset \bb{V}$ jest \textbf{wypukły}, jeśli kombinacja wypukład dwóch doowlnych punktów z $X$ jest elementem $X$.
-        W przeciwnym razie, jest \textbf{wklęsły}.
-    \end{definicja}
-
-    \begin{definicja}
-        $X \subset \bb{V}$. $f: X \rightarrow \bb{R}$ jest \textbf{wypukła} gdy: 
-        $(\forall x, y \in X)(\forall \lambda \in [0, 1])((\lambda x + (1 - \lambda)y \in X) \Rightarrow ((\lambda f(x) + (1 - \lambda)f(y)) \geq f(\lambda x + ( 1 - \lambda)y)))$
-    \end{definicja}
-
-    \begin{definicja}
-        Zbiór wektorów ${(x_i)}^{k}_{i=0}$ w prz.l. $\bb{V}$ jest \textbf{afnicznie niezależny wzlędem} $x_0$ jeśli ${(x_i - x_0)}_{i=0}^{k}$ 
-        jest liniowo neizależny od $\bb{V}$.
-    \end{definicja}
-
-    \begin{definicja}
-        \textbf{Sympleksem k-wymiarowym} nazywamy najmniejszy możliwy podzbiór prz.l. $\bb{V}$ nad ciałem $\bb{R}$ taki,
-        że zawiera wszystkie możliwe kombinacje wypukłe pewnych elem. ${(x_i)}_{i=0}^{k} \subset \bb{V}$,
-         afnicznie niezależny wzgl. $x_0$.
-        Elementy te nazywamy \textbf{wierzchołkami} sympleksu.
-    \end{definicja}
-
-    \begin{twierdzenie}
-        Jeśli $S$ jest sympleksem, a $f: S \rightarrow S$ jest odwzorowaniem ciągłym, to $f$ ma punkt stały.
-    \end{twierdzenie}
-
-    \begin{definicja}
-        W prz. m. $(X, d)$, \textbf{średnicą zbioru} $A \subset X$ nazywamy $diam(A) := \sup{\{d(x,y)\;:\; x, y \in A\}}$
-    \end{definicja}
-
-    \begin{definicja}
-        Mówimy, że $f: X \rightarrow \bb{R}$ ma własność \textbf{wykresu domkniętego}, jeśli dla ciągu ${(x_i)_{i=1}^{\infty}}$, 
-        zbieżnego do $x^*$, dowolny ciąg ${(y_i)_{i=1}^{\infty}}$, zbieżny do $y^*$, spełnienie warunku $(\forall i \in \bb{N})(y_i \in f(x_i))$,
-        pociąga za sobą, że $y^* \in f(x^*)$.
-    \end{definicja}
-
-    \begin{twierdzenie}
-        Niech $S$ będzie sympleksem $k$-wymiarowym, a $f: S \rightarrow \cal{P}(S)$ będzie miał własność wykresu domkniętego
-        oraz spełnia warunek $(\forall s \in S)(f(s) \text{ jest zwarty i wypukły})$.
-        Istnieje wtedy $x^* \in S$, że $x^* \in f(x^*)$.
-    \end{twierdzenie}
 \end{multicols*}
 
 \end{document}
