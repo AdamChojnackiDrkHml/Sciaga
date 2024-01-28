@@ -1,0 +1,132 @@
+%%%% Uniwersalny Szablon Infy WPPT v4.2 (02.02.2018) %%%%
+
+% uklad dokumentu
+\documentclass[8pt]{extarticle}
+\usepackage{xparse}
+\usepackage[margin=0pt]{geometry}
+\usepackage{enumerate} 
+\frenchspacing
+\linespread{0.5}
+ \setlength{\parindent}{0pt}
+
+% pakiety matematyczne
+\usepackage{amssymb}   
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathabx}
+
+\usepackage{tikz}
+\def\thm@space@setup{\thm@preskip=0pt
+\thm@postskip=0pt}
+% jezyk polski
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage[T1]{fontenc}
+
+% hiperlacza
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\newtheoremstyle{mystyle}
+  {1pt}%   Space above
+  {1pt}% 
+  {\slshape}%  Body font
+  {}%          Indent amount (empty = no indent, \parindent = para indent)
+  {\bfseries}% Thm head font
+  {.}%         Punctuation after thm head
+  {0.5em}%     Space after thm head: " " = normal interword space;
+     %         \newline = linebreak
+  {}%          Thm head spec (can be left empty, meaning `normal')
+
+% wstawianie zdjec
+\usepackage{graphicx} 
+
+% deklaracja zadania
+\theoremstyle{mystyle}
+\newtheorem{zadanie}{Zadanie}[subsection]
+
+
+% deklaracja metody
+% \theoremstyle{remark}
+\newtheorem*{metoda}{Metoda}
+% \theoremstyle{plain}
+
+% deklaracja rozwiazania
+% \theoremstyle{remark}
+\newtheorem*{rozwiazanie}{Rozwiązanie}
+% \theoremstyle{plain}
+
+\newtheorem{definicja}{Def}
+\newtheorem{twierdzenie}{Tw}
+\newtheorem{fakt}{F}
+
+% zestaw - mpis
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\DD}{\mathbb{D}}
+\newcommand{\Cal}{\mathcal}
+\newcommand{\bb}{\mathbb}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+% zestaw - programowanie
+\usepackage{listings} 
+\usepackage{minibox}
+\usepackage{minted}
+\usemintedstyle{borland}
+
+% zestaw - akiso
+%\usepackage{karnaugh-map} %%% nie ma w bazie overleaf
+\usepackage{karnaughmap}
+\usepackage{circuitikz}
+\usepackage[inline]{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+
+% zestaw - dyskretna
+\newcommand{\stirf}[2]{\genfrac{[}{]}{0pt}{}{#1}{#2}}
+\newcommand{\stirs}[2]{\genfrac{\{}{\}}{0pt}{}{#1}{#2}}
+
+% zestaw - jftt
+\newcommand{\oor}{\mathop{|}}
+\DeclareMathOperator{\Lead}{Leading}
+\DeclareMathOperator{\Trail}{Trailing}
+\DeclareMathOperator{\fst}{First}
+\DeclareMathOperator{\fol}{Follow}
+
+
+
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{float}
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{black}}
+\begin{document}
+
+\begin{multicols*}{4}
+    \input{wyklady/wyklad1}
+    \input{wyklady/wyklad2}
+    \input{wyklady/wyklad3}
+    \input{wyklady/wyklad4}
+    \input{wyklady/wyklad5}
+    \input{wyklady/wyklad6}
+    \input{wyklady/wyklad7}
+    \input{wyklady/wyklad8}
+    \input{wyklady/wyklad9}
+    \input{wyklady/wyklad10}
+    \input{wyklady/wyklad11}
+    \input{wyklady/wyklad12}
+    \input{wyklady/wyklad13}
+    \input{wyklady/wyklad14}
+    \input{wyklady/wyklad15}
+\end{multicols*}
+
+\end{document}
