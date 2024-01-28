@@ -1,0 +1,12 @@
+\begin{definicja}
+    \textbf{Metoda Williamsa} (chłopski rozum): szukamy najlepszej strategii zrandomizowanej. Jeśli strategia jest zdominowana, to jej p-p ustawiamy na 0. Pozostałe w zależności od p-p, że będą najlepsze i ich wartości wypłat. Graficznie: 
+    \begin{enumerate*}[label=\roman*)] 
+        \item  Przedstaw strategie 2. gracza jako punkty w przestrzeni $X \times Y$ odpowiedzi gracza 1. 
+        \item Znajdź otoczkę wypukłą tych punktów. 
+        \item Poprowadź prostą X = Y . Znajdź punkt z otoczki wypukłej, przeciętej z tą prostą, który minimalizuje wypłatę pierwszego gracza.
+    \end{enumerate*}
+\end{definicja}
+
+\begin{twierdzenie}
+    (Nash). Rozważmy $\Gamma = (P = [n],S,u)$ będzie grą w postaci normalnej. Niech każdy ze zbiorów strategii graczy $S_i$ będzie zwartym i wypukłym podzbiorem $\mathbb{R}^k$. Dla każdego $i \in [n]$, niech $u_i$ będzie ciągła oraz $(\forall s_{-i} \in S) s_i \mapsto u_i(\langle s_i, s_{-i} \rangle)$ - wklęskła. Wtedy $\Gamma$ posiada co najmniej jedną mieszaną równowagę Nasha.
+\end{twierdzenie}

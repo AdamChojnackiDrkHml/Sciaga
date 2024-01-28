@@ -1,0 +1,29 @@
+\begin{definicja}
+    \textbf{Przekształceniem afinicznym} wypłat nazywamy $u^{\prime} = \varphi(u)$ zadane wzorem $(\forall i \in [n])(\forall s \in S)u_i^{\prime}(s) = \alpha_i u_i(s) + \beta_i(s_{-i}),$ gdzie $\alpha_i > 0, \beta_i : S_{-i} \rightarrow \mathbb{R}.$ 
+\end{definicja}
+
+\begin{twierdzenie}
+    Jesli $\varphi$ jest przekształceniem afinicznym, to gry z wypłatami u i $u^{\prime} = \varphi(u)$ mają te same równowagi Nasha (lecz ze zmienionymi wypłatami).
+\end{twierdzenie}
+
+\begin{definicja}
+    Grę nazywamy \textbf{generyczną}, jeśli $(\exists \epsilon > 0)(\forall s \in S)(\forall i \in [n])$, zmiana $u_i(s)$ o $\epsilon$, nie zmienia równowag Nasha.
+\end{definicja}
+
+\begin{definicja}
+    \textbf{Grą jednoosobową} nazywamy grę, w której $P$ składa się z gracza $p$ oraz „natury”. Jest to dwuosobowa gra w postaci normalnej o sumie zerowej, gdzie strategie natury wybierane są losowo.
+\end{definicja}
+
+\begin{definicja}
+    \textbf{Równowagą skorelowaną} (strategią skorelowaną) nazywamy strategię mieszaną $\pi^{\star}$
+    (niekoniecznie o niezależnych współrzędnych (tj. rozkładach brzegowych)) zaproponowaną przez zaufaną wyrocznię, której dowolna realizacja $\sigma$ spełnia warunek: $(\forall i \in [n])(\forall \pi_i \in \Delta_i) \sum_{s_{-i} \in S_{-i}(\pi^{\star})} (u_i(s) - u_i(\langle \pi_i, s_{-i} \rangle)) \mathbb{P}[\sigma = s | \sigma_i = s_i] > 0.$
+\end{definicja}
+
+\begin{twierdzenie}
+    Każda równowaga Nasha jest równowagą skorelowaną. 
+\end{twierdzenie}
+
+
+\begin{twierdzenie}
+    W grach dwuosobowych, równowagi Nasha są wierzchołkami wieloscianów wyznaczonych przez nierówności dla równowag skorelowanych.
+\end{twierdzenie}

@@ -1,0 +1,32 @@
+\begin{definicja}
+    \textbf{Algorytm szukania równowag Nasha}
+    \begin{enumerate*}[label=\roman*)] 
+        \item Wykreśl strategie (ściśle) zdominowane. 
+        \item Heurystycznie należy wyznaczyć nośnik równowag Nasha, rozwiązując układy równań, opartych o tw. o równości wypłat.
+        \item Sprawdź, czy dają one równowagę Nasha.
+    \end{enumerate*}
+\end{definicja} 
+
+\begin{twierdzenie}
+    \textbf{Lemke - Howson}. Niech $z = (x $++$ y)^T \in \mathcal{M}_{(m+n) \times 1}, \mathbbm{1}_{m+n} = (1,\dots,1)^T \in \mathcal{M}_{(m+n) \times 1}$ oraz niech $C = \begin{bmatrix} 0 & A \\ B^T & 0 \end{bmatrix}$, gdzie wartości macierzy $A$ oraz $B$ są dodatnie. Wtedy dowolne niezerowe rozwiązanie $z^{\star}$ problemu: $z \geq 0; \mathbbm{1}_{m+n} - Cz \geq 0; x_T (\mathbbm{1}_{m+n} - Cz ) = 0$ wyznacza $\pi = \left(\frac{x}{\sum_{i=1}^m x_i} ,\frac{y}{\sum_{j=1}^n y_j}\right)$, które jest równowagą Nasha w grze dwumacierzowej z wypłatami zadanymi przez macierze $A$ i $B$ i vice versa, każda równowaga Nasha jest rozwiązaniem tego problemu.
+\end{twierdzenie}
+
+\begin{definicja}
+    \textbf{Algorytm Lemkego-Howsona}
+    \begin{enumerate*}[label=\roman*)] 
+        \item Niech $z$ będzie rozwiązaniem zerowym, kładziemy $D|r = -C|\mathbbm{1}_{m+n}^T$ (Niech $D = [d_{ij}]$) oraz ustawiamy liczbę kroków $K = 1$.
+        \item Wybieramy dowolną kolumnę $j_K$ macierzy $D$ i szukamy $d_{i_K} = min_i d_{ij_K}$.
+        \item Podmieniamy elementy macierzy D tak, żeby:
+        \begin{enumerate*} 
+            \item $d_{i_K j_K} \leftarrow \frac{1}{d_{i_K j_K}}$,
+            \item $d_{i_K j} \leftarrow \frac{d_{i_K j}}{d_{i_K j_K}}$, gdy $j \neq j_K$,
+            \item $r_{i_K} \leftarrow \frac{r_{i_K}}{d_{i_K j_K}}$,
+            \item $d_{ij_K} \leftarrow - \frac{d_{ij_K}}{d_{i_K j_K}}$, gdy $i \neq i_K$,
+            \item $d_{ij} \leftarrow d_{ij} - \frac{d_{i_K j} d_{ij_K}}{d_{i_K j_K}}$, gdy $i \neq i_K \land j \neq j_K$,
+            \item $r_{i} \leftarrow r_i - \frac{r_{i_K} d_{ij_K}}{d_{i_K j_K}}$, gdy $i \neq i_K$.
+        \end{enumerate*}
+        \item Jeśli $j_1 = i_K$ to kończymy algorytm.
+        \item W przeciwnym razie $K \leftarrow K + 1$, wstawiamy $j_K = i_{K-1}$, szukamy $d_{i_K} = min_i d_{ij_K}$ i wracamy do kroku 3.
+    \end{enumerate*}
+    Gdy w K-tym kroku otrzymaliśmy $i_K$ i $j_K$, to oznacza, że w rozwiązaniu $z_{j_K} = r_{i_K}$, gdzie wartość ta jest brana z końcowego wektora $r$.
+\end{definicja} 
