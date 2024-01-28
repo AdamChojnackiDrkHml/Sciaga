@@ -1,1 +1,56 @@
-asfdsa
+\begin{definicja}
+    Deterministyczna maszyna Turinga $M$ to dwustronnie nieskończona taśma oraz czwórka $(Q, \Sigma, \delta, q_0)$, gdzie:
+    \begin{itemize*}[label={}]
+        \item $Q$ --- skończony zbiór stanów (bez \textbf{tak, nie h}),
+        \item $\Sigma$ --- alfabet maszyny (poza $\sqcup$ domyślnym znakiem na maszynie),
+        \item $\delta$ --- funkcja przejścia (wiadomo jak wygląda)
+        \item $q_0 \in Q$ --- stan początkowy
+    \end{itemize*}
+\end{definicja}
+\begin{definicja}
+    Dla \textit{TM} $M$ i ciągu początkowego $x \in \Sigma^{*}$ przez $M(x)$
+    oznaczamy wynik działania $M$ na $x$. W szczególności:
+    \begin{itemize*}[label={}]
+        \item $M(x) = tak$ --- maszyna kończy w stanie akceptującym,
+        \item $M(x) = nie$ --- maszyna kończy w stanie odrzucającym,
+        \item $M(x) = \nearrow$ --- maszyna nie zatrzymała się,
+        \item $M(x) = y$ --- maszyna kończy pracę w \textbf{h} i $y \in (\Sigma \cup \{\sqcup\})^{*}$ jest zawartością taśmy bez blanków z lewej i prawej.
+    \end{itemize*}
+\end{definicja}
+\begin{definicja}
+    Konfiguracją maszyny $M$ będziemy nazywać trójkę $(q, \alpha, \beta)$,
+    gdzie $\alpha, \beta \in {(\Sigma \cup \{\sqcup\})}^{*}$, 
+    $\alpha$ symbole na taśme widziane przez maszynę bez zbędnych blanków po lewej,
+    $\beta$ symbole na taśme widziane przez maszynę bez zbędnych blanków po prawej,
+    $q$ aktualny stan maszyny.
+    $\stackrel{M}{\rightarrow}$ definiujemy jako relację przejścia w jednym kroku między dwoma konfiguracjami maszyny $M$.
+    $\stackrel{M^i}{\rightarrow}$ i $\stackrel{M^{*}}{\rightarrow}$ to odpowiednio przejście w $i$ krokach i przejście w dowolnej liczbie kroków.
+\end{definicja}
+\begin{definicja}
+    $k$-taśmowa \textit{TM} ma funkcję przejścia w postaci:
+    $\delta : \Cal{Q} \times {(\Sigma \cup \{\sqcup\})}^{k} \rightarrow$ $(\Cal{Q} \cup \{tak, nie, h\}) \times$ ${[(\Sigma \cup \{\sqcup\}) \times \{\leftarrow, \rightarrow, -\}]}^k$
+\end{definicja}
+\begin{twierdzenie}
+    Dla dowolnej \textit{TM} $M$ z $k$ taśmami można skonstruować jednotaśmową \textit{TM} $M'$ taką, że:
+    \begin{enumerate*}[label=\roman*)]
+        \item dla każdego słowa wejściowego $x$ zachodzi $M(x) = M'(x)$ (maszyny są równoważne),
+        \item jeśli $M$ na słowie wejściowym $x$ wykonała $f(|x|)$ kroków, to $M'$ wykona co najwyżej $O({(f(|x|))}^2)$.
+    \end{enumerate*}
+    Zwiększenie liczby taśmy, nie zwiększa możliwości obliczeniowych maszyn Turinga.
+\end{twierdzenie}
+\begin{twierdzenie}
+    Dla dowolnej \textit{TM} $M$ pracującej w czasie $f(|x|)$ i dowolnego $\varepsilon > 0$
+    można skonstruować równoważną \textit{TM} $M'$ pracującą w czasie $f'(|x|) = \varepsilon f(|x|) + |x| + 2$.
+\end{twierdzenie}
+\begin{definicja}
+    Niedeterministyczna \textit{TM} ma funkcję przejścia w postaci:
+    $\delta : \Cal{Q} \times {(\Sigma \cup \{\sqcup\})} \rightarrow$ $2^{(\Cal{Q} \cup \{tak, nie, h\}) \times {[(\Sigma \cup \{\sqcup\}) \times \{\leftarrow, \rightarrow, -\}]}}$
+\end{definicja}
+\begin{twierdzenie}
+    Dla dowolnej jednostaśmowej \textit{NTM} $M$ można skonstruować dwutaśmową \textit{DTM} $M'$ taką, że:
+    \begin{enumerate*}[label=\roman*)]
+        \item Dla każdego słowa wejściowego $x$ zachodzi $M(x) = M'(x)$ (maszyny są równoważne).
+        \item Jeśli $M$ na słowie wejściowym $x$ wykonała $f(|x|)$ kroków, to $M'$ wykona co najwyżej $O(c^{f(|x|)})$ kroków dla pewnej stałej $c$.
+    \end{enumerate*}
+    Niedeterminizm nie zwiększa możliwości obliczeniowych maszyn Turinga.
+\end{twierdzenie}
