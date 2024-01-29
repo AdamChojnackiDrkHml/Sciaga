@@ -34,8 +34,8 @@ Wykłady:
 
 ### TOZO
 Wykłady:
-1. Adam
-2. Adam
+1. ~~Adam~~
+2. ~~Adam~~
 3. Paweł 
 4. Paweł 
 5. Szymon
