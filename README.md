@@ -38,8 +38,8 @@ Wykłady:
 2. Adam
 3. Paweł 
 4. Paweł 
-5. -
-6. -
+5. Szymon
+6. Szymon
 7. -
 8. -
 9. -

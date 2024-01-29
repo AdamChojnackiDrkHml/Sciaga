@@ -1,0 +1,28 @@
+\begin{definicja}{Podgra w postaci ekstensywnej}
+    Niech $\Gamma = (P, \mathcal{T}, \mathbb{H}, \mathcal{A}, \rho, u)$ będzie EFG.
+    Na $V$ wprowadzamy najmniejszą relację częściowego porządku $\preceq$, która rozszerza
+    $\{(v, pre(v)) : v \in V \setminus \{r\}\}$ (standardowy porządek na drzewach ukorzenionych).
+    Rozważmy teraz $H \in \bigcup \mathbb{H}$ t. że $H = \{w\}$ dla pewnego $w \in V$.
+    Zdefiniujmy $V_w = \{v \in V : v \preceq w\}$. \textbf{Podgrą} $\Gamma'$ gry $\Gamma$, o korzeniu $w$, nazywamy grę $\Gamma$ obciętą do drzewa o wierzchołkach $V_w$.
+\end{definicja}
+
+\begin{definicja}
+    \textbf{Stratęgią postępowania} gracza $p$ nazywamy produkt $\prod\limits_{H \in \mathbb{H}_p}\pi_{A(H)}$ niezależnych rozkładów na zbiorach akcji gracza $p$.
+    Produkt takich strategii dla wszystkich graczy nazywamy strategią postępowania w grze.
+\end{definicja}
+
+\begin{twierdzenie}{(Kuhn)}
+    W PIEFG strategie postępowania są równoważne ze strategiami mieszanymi.
+\end{twierdzenie}
+
+\begin{twierdzenie}{(Kuhn)}
+    Każda PIEFG ma MNE.
+\end{twierdzenie}
+
+\begin{twierdzenie}{(Kuhn)}
+    Każda PIEFG ma PNE.
+\end{twierdzenie}
+
+\begin{definicja}
+    \textbf{Równowagą doskonałą} nazywamy taki profil strategii, że w każdej podgrze jest on równowagą Nasha.
+\end{definicja}

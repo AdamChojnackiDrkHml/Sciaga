@@ -1,0 +1,40 @@
+\begin{definicja}
+    Krotkę $\Gamma = (P, \mathcal{T} , \mathbb{H}, \mathcal{A}, \rho, u)$ nazywamy \textbf{grą w postaci ekstensywnej} ((\textbf{pozycyjnej}) (\textbf{EFG})), jeśli:
+    \begin{enumerate*}[label=\roman*)]
+        \item $P$ to skończony zbiór graczy, do którego zalicza się „natura” jako „gracz zerowy”. Wobec tego, będziemy pisać
+        $P = [0 : n] := \{0\} \cup [n]$, gdzie 0 będzie „naturą”, a $[n]$ będzie zbiorem zwykłych graczy.
+        \item $\mathcal{T} = (V = (D, L), r \in V, pre : V \setminus {r} \rightarrow D, succ : D \rightarrow \mathcal{P}(V))$
+        jest skończonym drzewem ukorzenionym o wierzchołkach $V$ i korzeniu $r$.
+        Zbiór wierzchołków $V = D \dot{\cup} L$ jest podzielony na zbiór liści $L$ i zbiór wierzchołków
+        decyzyjnych D, do których należy r. Wierzchołki z V reprezentują stany gry. W szczególności wierzchołki z $L$ oznaczają
+        stany końcowe gry, a $D$ reprezentuje stany, których gracze podejmują decyzje.
+        Ponadto $pre$ jest funkcją, która danemu wierzchołkowi przypisuje poprzednika (ojca) w drzewie, a $succ$ jest funkcją,
+        która danemu wierzchołkowi przypisuje zbiór następników (synów) w drzewie.
+        \item $\mathbb{H} = (\mathbb{H}_p)_{p \in P}$ jest partycją zbioru $D$, zwaną partycją informacyjną, gdzie każde z $\mathbb{H}_p$
+        jest partycją zbiorów informacji gracza $p$. Oznacza to, że każdy wierzchołek z $D$ odpowiada dokładnie jednemu graczowi.
+        Dla każdego $l \in L$ istnieje najmniejsze $k \in \mathbb{N}$, że $pre^k(l) = r$. Wtedy $path(l) := pre^i(l) : i \in [k]$ jest ścieżką akcji
+        graczy prowadzących do zakończenia gry $l$.
+        Wymagamy, aby żaden zbiór informacji $H$ nie kroił się więcej, niż raz z żadną ścieżką, tj. $(\forall H \in \bigcup\mathbb{H})(\forall l \in L) |H \cap path(l)| \leq 1$.
+        $\mathbb{H}$ indukuje funkcję $P_V : D \rightarrow P$, która stanowi $v$ przypisuje gracza, który w stanie $v$ podejmuje decyzję.
+        \item $\mathcal{A} =  (A(H))_{H \in \bigcup \mathbb{H}}$ jest rodziną zbiorów dostępnych akcji w każdym zbiorze informacji.
+        Co więcej, $\mathcal{A}$ indukuje funkcję $A_V : D \rightarrow \mathcal{A}$, która dla $v \in H \in \bigcup \mathbb{H}$, zwraca $A_V(v) = A(H)$, co oznacza, że $A_V(v)$
+        jest zbiorem dostepnych akcji w stanie $v \in H$, niezależnie od wyboru stanu z $H$. Wobec tego, $H$ można interpretować
+        jako pewną klasą abstrakcji, co oznacza, że gracz $p$ nie jest w stanie rozpoznać, w którym wierzchołku $v \in H$ się
+        znajduje w momencie podejmowania decyzji.
+        Ponadto można w podobny sposób zdefiniować funkcję $a : V \setminus \{r\} \rightarrow \bigcup \mathcal{A}$ zadaną jako akcja, która podjęta w $pre(v)$,
+        prowadzi do stanu $v$. (Domyślnie zbiory akcji zawierają tylko deterministyczne akcje, ale mogą też zawierać pewne strategie mieszane.)
+        \item $\rho = (\rho_H)_{H \in \mathbb{H}_0}$ jest wektorem rozkładów prawdopodobieństwa $\rho_H \in [0, 1]^{A(H)}$ losowych akcji „natury”.
+        \item $u = (u_p)_{p \in [n]}$ jest wektorem profili wypłat zwykłych graczy w stanach końcowych gry $L$, tj. $(\forall p \in [n]) u_p : L \rightarrow \mathbb{R}$
+    \end{enumerate*}
+\end{definicja}
+
+\begin{definicja}
+    Jeśli $\mathbb{H}_0 = \emptyset$ i $(\forall p \in P \setminus \{0\})(\forall H \in \mathbb{H}_p) |H| = 1$,
+    to mówimy, że jest to \textbf{gra o pełnej informacji} (PIEFG). W przeciwnym razie --- o niepełnej informacji (IIEFG).
+\end{definicja}
+
+\begin{definicja}
+    Przez $S_p = \prod\limits_{H \in \mathbb{H}_p}A(H)$ określamy \textbf{zbiór strategii zachowania} gracza $p$.
+    Mówimy, że strategia zachowania gracza $p$ jest czysta, jeśli wszystkie akcje gracza $p$ w tej strategii są deterministyczne.
+    W przeciwnym razie mówimy o mieszanej strategii zachowania. Co więcej, $S := \prod\limits_{p \in P}S_p$ jest zbiorem strategii w grze $\Gamma$.
+\end{definicja}

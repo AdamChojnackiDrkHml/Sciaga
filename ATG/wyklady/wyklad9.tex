@@ -1,0 +1,63 @@
+\begin{definicja}
+    \textbf{Aukcją} nazywamy grę (domyślnie w postaci strategicznej), gdzie każdy z graczy $p$ składa (w tajemnicy)
+    pewną ofertę $w_p$ za jakieś dobro, które według nich jest warte $v_p$. Na podstawie strategii graczy (ofert)
+    i wartości licytowanego przedmiotu, podawane są wypłaty $u$ oraz zwycięzcy aukcji (którzy dostają dobro).
+    Z reguły jest jeden zwycięzca, ale niekoniecznie musi mieć on największą wypłatę. Z puntku widzenia teorii gier, zwycięzcy nie są istotni.
+\end{definicja}
+
+\begin{definicja}{\textbf{Aukcja pierwszej cen}y}
+    Zwycięzcą zostaje gracz, który wylicytował najwyżej, i tyle też płaci. Wobec tego
+    \[u_p = \begin{cases} 
+                v_p - w_p & \text{jeśli } w_p = \max\limits_{i \in P}w_i \\
+                0 & \text{w p. p.}
+            \end{cases}
+    \]
+\end{definicja}
+
+\begin{definicja}{\textbf{Aukcja Vickreya} (aukcja drugiej kwoty)}
+    Dla każdego gracza $i$ przedmiot wystawiany na aukcji ma wartość $v_i$.
+    $u_i(s) = v_i - p$, jeśli strategia $s$ prowadzi do wygranej gracza $i$, a $u_i(s) = p$, gdy $s$ oznacza,
+    że aukcję wygrał inny gracz. Strategia gracza to stawiana kwota $p$. Każdy gracz podaje swoją kwotę w kopercie
+    w tajemnicy (one-shot game). Wygrywa gracz z najwyższą ofertą w kopercie, ale płaci kwotą drugiego rekordu (drugiej najwyższej kwoty).
+\end{definicja}
+
+\begin{twierdzenie}{(Vickrey)}
+    Zagranie $w_p = v_p$ w Aukcji Vickreya jest optymalne.
+\end{twierdzenie}
+
+\begin{definicja}
+    Niech $V_i$ oznacza zbiór możliwych wartości licytowanych przedmiotów przez gracza $i$.
+    $V = \bigtimes\limits_{i \in P} V_i$ oraz $V_{-i} = \bigtimes\limits_{j \in P \setminus \{i\}} V_j$.
+    \textbf{Mechanizm bezpośredniego ujawnienia} (ang. direct revelation mechanism) $(f, p)$ składa się z funkcji wyboru społecznego
+    (ang. social choice function) $f : V \rightarrow A$, gdzie $A$ to zbiór możliwych rozstrzygnięć, dla których gracze
+    wyznaczają waluacje $v_i$, oraz $p_i : V \rightarrow \mathbb{R}$, które są płatnościami graczy za grę w danej aukcji.
+    Funkcją dobra społecznego (ang. social welfare function) nazywamy funkcję $F \in \mathbb{R}^A$, określoną wzorem $F(a) = \sum\limits_{i \in P} v_i(a)$.
+\end{definicja}
+
+\begin{definicja}
+    Mówimy, że mechanizm $(f, p_1, ..., p_n)$ jest \textbf{zgodny z motywacją} (ang. incentive compatible), jeśli
+    $(\forall i \in P)(\forall V_i)(\forall V_{-i})f(\langle v_i, v_{-i} \rangle) - p_i(\langle v_i, v_{-i} \rangle) \geq f(\langle v_i', v_{-i} \rangle) - p_i(\langle v_i', v_{-i} \rangle)$
+\end{definicja}
+
+\begin{definicja}
+    \textbf{Mechanizm Vickreya-Clarke'a-Groovesa} to mechanizm bezpośredniego ujawnienia, jeśli $f(v) \in arg\max\limits_{a \in A}(\sum\limits_{i \in P}v_i(a))$
+    i istnieją funkcje (dla $i \in P$) $h_i : V_{-i} \rightarrow \mathbb{R}$, że $(\forall v \in V) p_i(v) = h_i(v_{-i}) - \sum\limits_{j \neq i}v_j(f(v))$.
+\end{definicja}
+
+\begin{twierdzenie}{(VCG)}
+    Każdy mechanizm VCG jest zgodny z motywacją.
+\end{twierdzenie}
+
+\begin{definicja}
+    Mówimy, że mechanizm jest \textbf{indywidualnie racjonalny}, jeśli $(\forall i \in P) v_i(f(v)) - p_i(v) \geq 0$.
+    Mówimy, że mechanizm \textbf{nie ma pozytywnego przepływu}, jeśli $(\forall i \in P)p_i(v) \geq 0$.
+\end{definicja}
+
+\begin{definicja}{\textbf{Reguła Clarke'a} (Clarke's pivot rule)}
+    $h_i(v_{-i}) = \max\limits_{b \in A}\sum\limits_{j \neq i}v_i(b)$ nazywamy wypłatą Clarke'a.
+    Wtedy $p_i(v) = \max\limits_{b \in A}(v_i(b) - v_i(a))$, gdzie $a = f(v)$.
+\end{definicja}
+
+\begin{twierdzenie}{(Clarke)}
+    Mechanizm VCG z regułą Clarke'a nie ma pozytywnych przepływów. Jeśli $(\forall v_i \in V_i)(\forall a \in A)v_i(a) \geq 0$, to jest indywidualnie racjonalny.
+\end{twierdzenie}
