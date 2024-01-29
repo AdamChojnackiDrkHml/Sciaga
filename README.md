@@ -8,9 +8,9 @@ Wykłady:
 4. ~~Paweł~~
 5. ~~Paweł~~
 6. ~~Paweł~~
-7. Szymon
-8. Szymon
-9. Szymon
+7. ~~Szymon~~
+8. ~~Szymon~~
+9. ~~Szymon~~
 10. Janusz
 11. Janusz
 
@@ -38,8 +38,8 @@ Wykłady:
 2. Adam
 3. Paweł 
 4. Paweł 
-5. -
-6. -
+5. Szymon
+6. Szymon
 7. -
 8. -
 9. -
