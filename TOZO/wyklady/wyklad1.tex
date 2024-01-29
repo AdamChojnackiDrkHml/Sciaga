@@ -54,3 +54,53 @@
     \end{enumerate*}
     Niedeterminizm nie zwiększa możliwości obliczeniowych maszyn Turinga.
 \end{twierdzenie}
+\begin{definicja}
+    Niech $L \subseteq \Sigma^*$. Niech \textit{TM} $M$, taka że dla każdego $x \in \Sigma^{*}$,
+    jeżeli $x \in L$ to $M(x) = tak$,
+    jeżeli $x \notin L$ to $M(x) = nie$.
+    Wówczas mówimy, że $M$ rozstrzyga $L$ ($L$ nazywamy rozstrzygalnym/rekurencyjnym).
+\end{definicja}
+\begin{definicja}
+    Niech $L \subseteq \Sigma^*$. Niech \textit{TM} $M$, taka że dla każdego $x \in \Sigma^{*}$,
+    jeżeli $x \in L$ to $M(x) = tak$,
+    Wówczas mówimy, że $M$ rozpoznaje $L$ ($L$ nazywamy rozpoznawalnym/rekurencyjnie przeliczalnym).
+    Język rozpoznawany przez $M$ oznaczamy jako $L(M)$.
+\end{definicja}
+\begin{definicja}
+    Niech $f : \Sigma^{*} \rightarrow {(\Sigma \cup \{\sqcup\})}^{*}$.
+    Mówimy, że \textit{TM} $M$ oblicza $f$, jeżeli dla każdego $x \in \Sigma^{*}$ mamy $M(x) = f(x)$.
+    $f$ nazywamy wtedy funkcją rekurencyjną.
+\end{definicja}
+\begin{lemat}
+    Suma i przekrój języków rozpoznawalnych (rozstrzygalnych) jest językiem rozpoznawalnym (rozstrzygalnym).
+\end{lemat}
+\begin{lemat}
+    Jeśli $L$ jest językiem rozstrzygalnym to $L'$ też.
+\end{lemat}
+\begin{lemat}
+    $L$ jest rozstrzygalny $\Leftrightarrow$ $L$ i $L'$ są rozpoznawalne.
+\end{lemat}
+\begin{definicja}
+    \textit{TM} $M$ nazywamy generatorem języka $L$, jeśli startując z pustym wejściem na specjalnej taśmie wyjściowej,
+    wypisze wszystkie słowa z języka $L$ (każde słowo pojawi się na tej taśmie kiedyś).
+    Język generowany przez $M$ oznaczamy jako $G(M)$.
+\end{definicja}
+\begin{lemat}
+    Jeśli dla języka $L$ istnieje generator $G$, to $L$ jest rozpoznawalny.
+\end{lemat}
+\begin{lemat}
+    Jeśli $M$ rozpoznaje $L$, to istnieje generator $G$ dla $L$.
+\end{lemat}
+\begin{lemat}
+    Jeśli $L$ jest rozstrzygalny to istnieje generator wypisujący słowa z $L$
+    w porządku leksykograficznym.
+\end{lemat}
+\begin{definicja}
+    Właściwą funkcją złożoności nazywamy taką niemalejącą funkcję $f: \bb{N} \rightarrow \bb{N}$
+    dla której istnieje \textit{DTM} która:
+    \begin{enumerate*}[label=\roman*)]
+        \item Startując z napisem $0^n$ na wejściu(read-only) kończy z napisem $0^{f(n)}$ na wyjściu(write-only).
+        \item Pracuje w czasie $\leq O(n + f(n))$.
+        \item Używa na taśmach roboczych $\leq O(f(n))$ komórek.
+    \end{enumerate*}
+\end{definicja}
