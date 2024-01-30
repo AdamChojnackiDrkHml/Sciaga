@@ -51,7 +51,7 @@ Wykłady:
 23. -
 24. -
 25. -
-26. Adam
+26. ~~Adam~~
 27. Adam
 28. Adam
 29. Adam
