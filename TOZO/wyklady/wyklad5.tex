@@ -1,0 +1,61 @@
+\begin{lemat}
+    Niech $G = (V, E)$ i $(x, y) \in E$. Wtedy
+    $vc(G) = \min \{vc(G \setminus x), vc(G \setminus y)\} + 1$
+    gdzie $vc(G)$ to minimalny rozmiar pokrycia wierzchołkowego grafu $G$.
+\end{lemat}
+
+\begin{lemat}
+    Dla $G = (V, E)$ jeśli $vc(G) \leq k$, to $|E| \leq k(|V| - 1)$.
+\end{lemat}
+
+\begin{definicja}
+    Niech $\mathbb{G}$ będzie zbiorem wszystkich grafów. \textbf{Parametrem grafu}
+    nazywamy dowolną funkcję $p : \mathbb{G} \rightarrow \mathbb{N}$.
+\end{definicja}
+
+\begin{definicja}
+   \textbf{Problemem parametrycznym} nazywamy parę $(\Pi, p)$, gdzie $\Pi$ --- problem, a $p$ - parametr.
+\end{definicja}
+
+\begin{definicja}
+    Algorytm $A$ rozwiązujący $(\Pi, p)$ nazywamy \textbf{Fixed Parameter Tractable} (FPT),
+    jeśli istnieje obliczalna funkcja $f : \mathbb{N} \rightarrow \mathbb{N}$ t. że złożoność
+    algorytmu $A$ może być wyrażona jako $\mathcal{O}(f(p(G))|G|^{\mathcal{O}(1)})$.
+\end{definicja}
+
+\begin{definicja}
+    Problem parametryczny $(\Pi, p)$ jest FPT, jeśli istnieje algorytm FPT,
+    parametryzowany przez $p$, który go rozwiązuje.
+\end{definicja}
+
+\begin{definicja}
+    Mając problem parametryczny $(\Pi, p)$, \textbf{algorytm kernelizacji} zastępuje dane
+    $(I, p(I))$ danymi (zredukowanymi) $(I', p'(I'))$ (zwanymi \textbf{kernelem} problemu) t. że
+    \begin{enumerate*}[label=\roman*)]
+        \item $p'(I') \leq g(p(I))$ i $|I'| \leq f(p(i))$ dla pewnych obliczalnych funkcji $f, g$ zależnych
+        wyłącznie od $p(I)$ (nie od $|I|$).
+        \item $(I, p(I)) \in \Pi$ wtedy i tylko wtedy, gdy $(I', p'(I')) \in \Pi$
+        \item redukcja z $(I, p(I))$ do $(I', p'(I'))$ jest obliczalna w czasie wielomianowym od $|I| + p(I)$
+    \end{enumerate*}
+\end{definicja}
+
+\begin{lemat}
+    Niech $G = (V, E)$ i $v \in V$ ma stopień większy niż $k$. Wtedy $v$ należy do każdego pokrycia wierzchołkowego
+    rozmiaru co najwyżej $k$.
+\end{lemat}
+
+\begin{lemat}
+    Niech $G = (V, E)$. Jeśli $vc(G) \leq k$ i żaden wierzchołek w $G$ nie ma stopnia większego niż $k$, to $|E| \leq k^2$.
+\end{lemat}
+
+\begin{lemat}
+    Jeśli $G$ ma pokrycie wierzchołkowe o rozmiarze co najwyżej $k$,
+    to \textbf{Algorytm kompresji dla $VertexCover(k)$} zwróci pokrycie wierzchołkowe $G$
+    rozmiaru co najwyżej $k$ w czasie $\mathcal{O}(|E|2^{|Q|})$.
+\end{lemat}
+
+\begin{lemat}
+    Jeśli $G$ ma pokrycie wierzchołkowe rozmiaru co najwyżej $k$,
+    to \textbf{Algorytm FPT z iteracyjną kompresją dla $VertexCover(k)$} zwróci
+    pokrycie wierzchołkowe rozmiaru co najwyżej $k$ w czasie $\mathcal{O}(|E||V|2^{k + 1})$.
+\end{lemat}

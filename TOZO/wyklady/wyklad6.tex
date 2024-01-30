@@ -1,0 +1,58 @@
+\begin{definicja}
+    Wielomianowa dokładna (niedeterministyczna) maszyna Turinga jest typu
+    \textbf{Monte Carlo} dla problemu $A$, jeśli dla każdego $x \in A$ co najmniej
+    połowa obliczeń na słowie $x$ jest akceptująca, a dla $x \notin A$
+    wszystkie obliczenia odrzucają $x$.
+\end{definicja}
+
+\begin{definicja}
+    \textbf{Klasa RP} (randomized polynomial time) to zbiór problemów posiadających
+    maszyny Turinga typu Monte Carlo.
+\end{definicja}
+
+\begin{lemat}
+    Jeżeli dokładna wielomianowa maszyna Turina $M$ dla każdego pozytywnego przykładu $x$
+    ma co najmniej $0 < \varepsilon \frac{1}{2}$ obliczeń akceptujących, to $M$ jest typu Monte Carlo.
+\end{lemat}
+
+\begin{lemat}
+    $P \subseteq RP \subseteq NP$
+\end{lemat}
+
+\begin{definicja}
+    \textbf{Klasa coRP} to zbiór problemów posiadających wielomianową dokładną (niedeterministyczną)
+    maszynę Turinga taką, że dla każdego negatywnego przykładu $x$ co najmniej połowa obliczeń odrzuci $x$,
+    a dla pozytywnego $x$ wszystkie obliczenia zaakceptują $x$ (dopełnienie klasy $RP$).
+\end{definicja}
+
+\begin{definicja}
+    \textbf{Klasa ZPP} (zero probability of error) to $RP \cap coRP$.
+\end{definicja}
+
+\begin{definicja}
+    \textbf{Klasa PP} (probabilistic polynomial time) to klasa problemów, dla których istnieje wielomianowa
+    dokładna (niedeterministyczna) maszyna Turinga, która akceptuje dane wtedy i tylko wtedy,
+    gdy ponad połowa obliczeń odpowiada tak (większość akceptuje dane, remin traktujemy jako odrzucenie).
+\end{definicja}
+
+\begin{twierdzenie}
+    $NP \subseteq PP$
+\end{twierdzenie}
+
+\begin{lemat}
+    Klasa $PP$ jest zamknięta na dopełnienie.
+\end{lemat}
+
+\begin{definicja}
+    \textbf{Klasa BPP} (bounded error of probability) to klasa problemów, dla których istnieje wielomianowa dokładna
+    (niedeterministyczna) maszyna Turinga, która dla każdego $x$ akceptuje $x$, jeśli co najmniej $\frac{3}{4}$ obliczeń
+    odpowiada "tak", a odrzuca $x$, jeśli co najmniej $\frac{3}{4}$ obliczeń odpowiada "nie".
+\end{definicja}
+
+\begin{lemat}
+    $RP \subseteq BPP \subseteq PP$
+\end{lemat}
+
+\begin{lemat}
+    $BPP$ jest zamknięta na dopełnienie.
+\end{lemat}
