@@ -1,0 +1,44 @@
+\begin{definicja}
+    Załóżmy, że $A$ jest problemem optymalizacyjnym. Niech $F_A(x)$ - zbiór dopuszczalnych rozwiązań, $c(s)$ dla $s \in F(x)$ - dodatni całkowitoliczbowy koszt rozwiązana $s$, $OPT_A(x) = min_{s \in F(x)} c(s)$ - koszt rozwiązania optymalnego. Algorytm $M$ jest algorytmem $\epsilon$-aproksymacyjnym (dla $1 > \epsilon \geq 0$) problemu $A$, jeśli 
+    \begin{enumerate*}[label=\roman*)]
+        \item $M$ jest algorytmem wielomianowym,
+        \item $M(x) \in F_A(x)$,
+        \item $\frac{|c(M(x)) - OPT_A(x)|}{max\{OPT_A(x), c(M(x))\}} \leq \epsilon$
+    \end{enumerate*}
+\end{definicja}
+
+\begin{definicja}
+    Próg aproksymacji problemu $A$ to największe dolne ograniczenie wszystkich wartości $\epsilon > 0$ dla których istnieje algorytm $\epsilon$-aproksymacyjny.
+\end{definicja}
+
+\begin{definicja}
+    $NODE$ $COVER$ --- dla grafu $G = (V,E)$ chcemy znaleźć najmniejszy ze względu na moc $C \subseteq V$ taki, że $\forall_{(u,v) \in E} u \in C \lor v \in C$.
+\end{definicja}
+
+\begin{twierdzenie}
+    Próg aproksymacyjny problemu $NODE$ $COVER$ jest nie większy niż $\frac{1}{2}$. 
+\end{twierdzenie}
+
+\begin{definicja}
+    $MAX$ $CUT$ --- dla grafu $G = (V,E)$ taki podział $V$ na dwa zbiory $S$ i $V \setminus S$ aby liczba krawędzi między nimi była jak największa.
+\end{definicja}
+
+\begin{lemat}
+    Rozwiązanie wygenerowane przez lokalne polepszenia dla problemu $MAX$ $CUT$ ma co najmniej połowę optymalnej liczby krawędzi.
+\end{lemat}
+
+\begin{twierdzenie}
+    Próg aproksymacyjny problemu $MAX$ $CUT$ jest nie większy niż $\frac{1}{2}$. 
+\end{twierdzenie}
+
+\begin{twierdzenie}
+    Jeżeli $P \neq NP$, to próg aproksymacyjny problemu komiwojażera wynosi $1$ (oznacza to, że problem nie jest aproksymowalny).
+\end{twierdzenie}
+
+\begin{definicja}
+    Wielomianowy schemat aproksymacji (PTAS) dla problemu optymalizacyjnego $A$ to algorytm, który dla każdego $\epsilon > 0$ i przykładu $x \in A$ zwraca rozwiązanie o błędzie względnym równym co najwyżej $\epsilon$, w czasie wielomianowym zależnym od $\epsilon$ i długości $x$. Schemat nazywamy w pełni wielomianowym (FPTAS), gdy tylko współczynniki wielomianu zależą od $\frac{1}{\epsilon}$.
+\end{definicja}
+
+\begin{twierdzenie}
+    Próg aproksymacji dla problemu plecakowego wynosi $0$. Ma on w pełni wielomianowy schemat aproksymacji (FPTAS).
+\end{twierdzenie}
