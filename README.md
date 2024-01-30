@@ -14,24 +14,6 @@ Wykłady:
 10. Janusz
 11. Janusz
 
-### MPA
-Wykłady:
-1. Szymon
-2. Szymon
-3. Szymon
-4. Szymon
-5. -
-6. -
-7. Adam
-8. Adam
-9. Adam
-10. Adam
-11. -
-12. -
-13. -
-14. -
-15. -
-
 ### MPA ZADANIA
 8. Szymon
 9. Paweł
