@@ -28,10 +28,35 @@
     }
     \caption{Alfabeta(v,lev,$\alpha,\beta$)}
 \end{algorithm}
-\begin{definicja}{\textbf{Gra koalicyjna z wypłatami ubocznymi}}
+\begin{definicja}{\textbf{Gra koalicyjna/kooperacyjna, z wypłatami ubocznymi}}
     $(P,v)$, $P$ sk. zb. graczy, $v:\mathcal{P}(P)\rightarrow\mathbb{R}$, $v(\emptyset)=0$, $v(S)$ zadaje 
-    \textbf{siłę koalicyjną (wartość koalicyjną)} koalicji $S\subset P$, gdzie $v(S)$ ma być rozdystrybuowana między graczy w koalicji $S$.
+    \textbf{siłę koalicyjną (wartość koalicyjną)} koalicji $S\subseteq P$, gdzie $v(S)$ ma być rozdystrybuowana między graczy w koalicji $S$.
     $P$ - \textbf{wielka koalicja}.
+\end{definicja}
+\begin{definicja}{\textbf{Gra kooperacyjna jest}}
+    \textbf{nad-addytywna: } $(\forall S,T\subseteq P) ((S\cap T=\emptyset)\rightarrow(v(S)+v(T)\leq v(S\cup T)))$. Oznacza opłacalność łąćzenia się w większe koalicje.
+    \textbf{monotoniczna: } $(\forall S\subseteq T\subseteq P) (v(S)\leq v(T))$.
+    \textbf{wypukła: } $(\forall S,T\subseteq P) (v(S)+v(T)-v(S\cap T)\leq v(S\cup T))$. Gracze mają niemniejsze wypływy w większych koalicjach. Wypukła$\rightarrow$nad-addytywna.
+\end{definicja}
+\begin{fakt}\label{w10-f-normkoal}
+    $(P=[n],S,u)$ gra w postaci normalnej. Wtedy $(P,v)$ grą koalicyjną, gdzie dla $T\subset P$: 
+    $v(T)=\max\limits_{\pi_T\in\Delta_T^*}\min\limits_{\pi_{-T}\in\Delta_{-T}^*}\sum\limits_{i\in T}{u_i(\langle \pi_T,\pi_{-T} \rangle)}$.
+\end{fakt}
+\begin{fakt}
+    Każdą grę nad-addytywną można otrzymać z pewnej gry w postaci normalnej za pomocą wzoru w Fakcie~\ref{w10-f-normkoal}.
+\end{fakt}
+\begin{definicja}
+    $P=[n]$. Wektor wypłat w grze koalicyjnej to $x\in\mathbb{R}^n$, jest on:
+    \textbf{racjonalny grupowo (alokacją/podziałem)} jeśli $\sum_{i=1}^n{x_i=v(N)}$;
+    \textbf{racjonalny indywidualnie} jeśli $(\forall i\in [n]) (v(\{i\}) \leq x_i)$;
+    \textbf{racjonalny koalicyjnie (stabilny)} jeśli $(\forall S\subseteq P)(v(S)\leq\sum_{i\in S}{x_i})$;
+    \textbf{imputacją} jeśli jest indywidualnie racjonalną alokacją.
+\end{definicja}
+\begin{fakt}
+    Nad-addytywna gra koalicyjna posada podział.
+\end{fakt}
+\begin{definicja}
+    Zbiór $C(v)$ stabilnych podziałów to \textbf{rdzeń gry}. Może być pusty. Jest domknięty i wypukły.
 \end{definicja}
 
 
