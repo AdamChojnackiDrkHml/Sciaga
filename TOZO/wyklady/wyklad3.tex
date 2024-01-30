@@ -1,0 +1,172 @@
+\begin{definicja}
+    \textbf{Problemem decyzyjnym} nazywamy rozstrzygnięcie pewnej własności dla języka danych. Zakładamy, że rozstrzygnięcie należenia do języka danych jest prostsze niż rozstrzygnięcie posiadania tej własności. Przykład danych nazywamy pozytywnym, jeśli posiada tę własność, negatywnym, jeśli jej nie posiada. Dopełnieniem problemu jest pytanie o przeciwną własność.
+\end{definicja}
+
+\begin{definicja}
+    Niech $f$ będzie funkcją $\mathbb{N} \rightarrow \mathbb{N}$. $f$ jest \textbf{właściwą funkcją złożoności}, jeżeli jest niemalejąca i istnieje maszyna Turinga $M_f$ taka, że dla każdego $n \in \mathbb{N}$ i dla każdego $x$ długości $n$ zachodzi $M_f(x) = \sqcap^{f(|x|)}$ oraz $M_f$ pracuje w czasie $O(|x| + f(|x|))$ i pamięci $O(f(|x|))$.
+\end{definicja}
+
+\begin{definicja}
+    Maszyna Turinga M jest \textbf{dokładna}, jeżeli istnieją takie właściwe funkcje złożoności $f$ i $g$, że dla każdego $x$ długości $n$ obliczenie $M(x)$ zatrzymuje się dokładnie po $f(n)$ krokach i wszystkie jej taśmy robocze zawierają dokładnie $g(n)$ symboli (innych niż $\sqcup$). Zakładamy dodatkowo, że taśma wejściowa jest tylko do odczytu.
+\end{definicja}
+
+\begin{lemat}
+    Maszyny Turinga z ograniczoną pamięcią zawsze się zatrzymują.
+\end{lemat}
+
+\begin{definicja}
+    \begin{itemize*}[label={}]
+        \item $TIME(f)$ --- zbiór wszystkich dokładnych, deterministycznych maszyn Turinga pracujących w czasie co najwyżej $f$,
+        \item $NTIME(f)$ --- zbiór wszystkich dokładnych, niedeterministycznych maszyn Turinga pracujących w czasie co najwyżej $f$,
+        \item $SPACE(f)$ --- zbiór wszystkich dokładnych, deterministycznych maszyn Turinga pracujących z pamięcią co najwyżej $f$
+        \item $NSPACE(f)$ --- zbiór wszystkich dokładnych, niedeterministycznych maszyn Turinga pracujących z pamięcią co najwyżej $f$
+    \end{itemize*}
+\end{definicja}
+
+\begin{definicja}
+    \textbf{Podstawowe klasy złożoności obliczeniowej}:
+    \begin{itemize*}[label={}]
+        \item $L = SPACE(\log n)$,
+        \item $NL = NSPACE(\log n)$,
+        \item $P = \bigcup_{j \in \mathbb{N}} TIME(n^j)$,
+        \item $NP = \bigcup_{j \in \mathbb{N}} NTIME(n^j)$
+        \item $PSPACE = \bigcup_{j \in \mathbb{N}} SPACE(n^j)$
+        \item $NPSPACE = \bigcup_{j \in \mathbb{N}} NSPACE(n^j)$
+        \item $EXP = \bigcup_{j \in \mathbb{N}} TIME(2^{n^j})$
+    \end{itemize*}
+\end{definicja}
+
+\begin{definicja}
+    Mówimy, że problem $A$ należy do klasy złożoności $\mathcal{C}$, jeśli istnieje
+    maszyna Turinga $M \in \mathcal{C}$ rozstrzygająca $A$.
+\end{definicja}
+
+\begin{twierdzenie}
+    Następujące zawierania są prawdziwe:
+    \begin{itemize*}[label={}]
+        \item $TIME(f) \subseteq NTIME(f)$ oraz $SPACE(f)\subseteq NSPACE(f)$,
+        \item $NTIME(f) \subseteq SPACE(f)$,
+        \item $NSPACE(f) \subseteq TIME(k^{\log + f})$.
+    \end{itemize*}
+    Wniosek: $L \subseteq NL \subseteq P \subseteq NP \subseteq PSPACE \subseteq EXP$.
+\end{twierdzenie}
+
+\begin{twierdzenie}
+    \textbf{Savitch} --- $REACHABILITY$, problem sprawdzenia, czy w grafie $G$ istnieje ścieżka między dwoma ustalonymi wierzchołkami $a$ i $b$, należy do $SPACE((\log n)^2)$. Wniosek: $NSPACE(f(n)) \subseteq SPACE((f(n))^2)$, dla $f \in \Omega(\log)$. $PSPACE = NPSPACE$.
+\end{twierdzenie}
+
+\begin{definicja}
+    $H_f = \{ M; x : M$ akceptuje $x$ w co najwyżej $f(|x|)$ krokach $\}$.
+\end{definicja}
+
+\begin{lemat}
+    $H_f \in TIME((f(n))^3)$.
+\end{lemat}
+
+\begin{lemat}
+    $H_f \notin TIME(f(\lfloor \frac{n}{2} \rfloor))$.
+\end{lemat}
+
+\begin{twierdzenie}
+    \textbf{O hierarchii czasowej} --- Jeżeli $f(n) \geq n$, to $TIME(f(n)) \subsetneq TIME((f(2n + 1))^3)$. Wniosek: $P \subsetneq EXP$.
+\end{twierdzenie}
+
+\begin{twierdzenie}
+    \textbf{O hierarchii pamięciowej} --- $SPACE(f(n)) \subsetneq SPACE(f(n) \log f(n))$. Wniosek: $L \subsetneq PSPACE$.
+\end{twierdzenie}
+
+\begin{twierdzenie}
+    Jeśli $f(n) \in o(\log \log n)$ to $SPACE(f) = SPACE(0)$. $SPACE(0)$ to języki regularne.
+\end{twierdzenie}
+
+\begin{definicja}
+    \textbf{Redukcja} --- Problem $A$ jest co najmniej tak trudny, jak $B$, jeżeli istnieje funkcja $R \in L$ taka, że $x$ jest pozytywnym przykładem $B \iff R(x)$ jest pozytywnym przykładem $A$. Mówimy, że B redukuje się do A. (Redukcja należy do $L$, najsłabszej klasy, tak aby sama redukcja nie mogła rozwiązać problemu).
+\end{definicja}
+
+\begin{lemat}
+    Jeśli $R_1$ i $R_2$ są redukcjami to złożenie $R_3 = R_2 \circ R_1$ też jest redukcją. 
+\end{lemat}
+
+\begin{definicja}
+    Problem $A$ jest trudny dla klasy $\mathcal{C}$ ($\mathcal{C}$-trudny), jeżeli każdy problem $B \in \mathcal{C}$ redukuje się do $A$.
+\end{definicja}
+
+\begin{definicja}
+    Problem $A$ jest zupełny dla klasy $\mathcal{C}$ ($\mathcal{C}$-zupełny), jeśli $A \in \mathcal{C}$ i $A$ jest $\mathcal{C}$-trudny.
+\end{definicja}
+
+\begin{lemat}
+    Jeśli $A$ jest $\mathcal{C}$-trudny i $A$ redukuje się do $B$ to $B$ jest $\mathcal{C}$-trudny.
+\end{lemat}
+
+\begin{twierdzenie}
+    $REACHABILITY$ jest $NL$-zupełny.
+\end{twierdzenie}
+
+\begin{definicja}
+    $CIRCUIT$ $VALUE$ to problem, czy dla danej sieci boolowskiej $C(x_1,\dots,x_n)$ i danego wartościowania wejść $x_1,\dots,x_n$ wartością wyjściową sieci będzie $1$.
+\end{definicja}
+
+\begin{lemat}
+    $CIRCUIT$ $VALUE \in P$.
+\end{lemat}
+
+\begin{twierdzenie}
+    $CIRCUIT$ $VALUE$ jest $P$-trudny. Wniosek: $CIRCUIT$ $VALUE$ jest $P$-zupełny.
+\end{twierdzenie}
+
+\begin{definicja}
+    $CIRCUIT$ $SATISFABILITY$ to problem, czy dla danej sieci boolowskiej $C(x_1,\dots,x_n)$ istnieje wartościowanie wejść $x_1,\dots,x_n$ takie, że wartością wyjściową sieci będzie $1$ (sieć jest spełnialna).
+\end{definicja}
+
+\begin{lemat}
+    $CIRCUIT$ $SATISFABILITY \in NP$.
+\end{lemat}
+
+\begin{twierdzenie}
+    $CIRCUIT$ $SATISFABILITY$ jest $NP$-trudny. Wniosek: $CIRCUIT$ $SATISFABILITY$ jest $NP$-zupełny.
+\end{twierdzenie}
+
+\begin{definicja}
+    $3SAT$ to problem, czy formuła w postaci koniunkcji klauzul zawierających co najwyżej alternatywę 3 literałów będących nazwą zmiennej lub jej negacją, jest spełnialna. W wersji z dokładnie 3 literałami moglibyśmy formułę zapisać następująco: $\phi(x_1,\dots,x_n) = \bigwedge_{i = 1}^{m} (l_{i1} \lor l_{i2} \lor l_{i3})$, gdzie $l_{ij} \in \{x_1,\dots,x_n, \neg x_1,\dots, \neg x_n\}$.
+\end{definicja}
+
+\begin{twierdzenie}
+    $3SAT$ jest $NP$-zupełny.
+\end{twierdzenie}
+
+\begin{definicja}
+    $INDEPENDENT$ $SET$ to problem, czy dla danego grafu $G = (V, E)$ i $K \in \mathbb{N}$, istnieje $I \subseteq V$ o mocy $K$ taki, że $I$ jest niezależny, czyli nie istnieje krawędź w $E$ łącząca dwa wierzchołki z $I$.
+\end{definicja}
+
+\begin{twierdzenie}
+    $INDEPENDENT$ $SET$ jest $NP$-zupełny.
+\end{twierdzenie}
+
+\begin{definicja}
+    Algorytm nazywamy \textbf{pseudowielomianowym}, jeśli zależy wielomianowo od liczb występujących w danych, a nie jest wielomianowy od długości ich zapisu.
+\end{definicja}
+
+\begin{definicja}
+    Jeżeli problem pozostaje $NP$-zupełny nawet wtedy, gdy wymagamy by dowolny przykład długości $n$ zawierał liczby wielkości co najwyżej $p(n)$, dla pewnego wielomianu $p$, to problem nazywamy \textbf{silnie} $NP$-zupełnym.
+\end{definicja}
+
+\begin{definicja}
+    $co$-$NP$ --- klasa problemów wielomianowych z łatwymi dowodami negatywnymi (zmiana definicji akceptowania: akceptujemy kiedy wszystkie ścieżki obliczeń kończą się stanem TAK, odrzucamy jeśli choć jedna kończy się stanem NIE).
+\end{definicja}
+
+\begin{lemat}
+    $P \subseteq NP \cap co$-$NP$
+\end{lemat}
+
+\begin{lemat}
+    Jeżeli problem $A$ jest $NP$-zupełny, to jego dopełnienie jest $co$-$NP$-zupełne.
+\end{lemat}
+
+\begin{lemat}
+    Jeżeli problem $co$-$NP$-zupełny jest w $NP$, to $NP = co$-$NP$. Problemy otwarte: Czy $NP = co$-$NP$? Czy $P = NP \cap co$-$NP$?
+\end{lemat}
+
+\begin{lemat}
+    Problem optymalizacyjny, którego wersja decyzyjna jest $NP$-trudna, jest również $NP$-trudny.
+\end{lemat}
