@@ -16,10 +16,10 @@ Wykłady:
 
 ### MPA
 Wykłady:
-1. -
-2. -
-3. -
-4. -
+1. Szymon
+2. Szymon
+3. Szymon
+4. Szymon
 5. -
 6. -
 7. Adam
@@ -33,11 +33,11 @@ Wykłady:
 15. -
 
 ### MPA ZADANIA
-8. -   
+8. Szymon
 9. Paweł
 10. - 
 11. -
-12. -
+12. Szymon
 -
 14. Paweł
 15. -
@@ -48,14 +48,14 @@ Wykłady:
 20. -
 21. Adam
 22. -
-23. -
+23. Szymon
 24. -
 25. -
 26. ~~Adam~~
 27. Adam
 28. Adam
 29. Adam
-30. -
+30. Szymon
 31. Paweł
 32. -
 33. -
@@ -65,13 +65,13 @@ Wykłady:
 37. -
 38. -
 39. Adam
-40. -
+40. Szymon
 41. -
 -
 43. -
 44. -
 45. Adam
-46. -
+46. Szymon
 47. -
 48. Paweł
 49. -
