@@ -1,0 +1,31 @@
+\begin{twierdzenie}{(Algorytm alfa-beta)}
+    2-os. EFG o sumie stałej. $minmax(v,lev)=$ return $alfabeta(v,lev,-\infty,\infty)$. Zwraca wartość gry dla równowagi doskonałej w grze o pełnej informacji.
+\end{twierdzenie}
+\begin{algorithm}[H]
+    \SetAlgoLined
+    \KwData{Input data if necessary}
+    
+    \If{$v\in L$}{
+        return $u(v)$
+    }
+    \If{$P_V(v)=1$}{
+        \For{$s\in succ(v)$}{
+            $\alpha=\max(\alpha,Alfabeta(w,lev+1,\alpha,\beta))$\\
+            \If{$\alpha\geq\beta$}{
+                odcinamy gałąź Beta
+            }
+        }
+        return $\alpha$
+    }
+    \If{$P_V(v)=2$}{
+        \For{$s\in succ(v)$}{
+            $\beta=\min(\beta,Alfabeta(w,lev+1,\alpha,\beta))$\\
+            \If{$\alpha\geq\beta$}{
+                odcinamy gałąź Alpha
+            }
+        }
+        return $\beta$
+    }
+    \caption{Alfabeta(v,lev,$\alpha,\beta$)}
+\end{algorithm}
+

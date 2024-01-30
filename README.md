@@ -87,6 +87,6 @@ Wykłady:
 4. ~~Paweł~~ 
 5. ~~Szymon~~
 6. ~~Szymon~~
-7. -
-8. -
-9. -
+7. Janusz
+8. Janusz
+9. Janusz
