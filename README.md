@@ -35,8 +35,8 @@ Wykłady:
 25. -
 26. ~~Adam~~
 27. Adam
-28. Adam
-29. Adam
+28. ~~Adam~~
+29. ~~Adam~~
 30. Szymon
 31. Paweł
 32. -
@@ -46,7 +46,7 @@ Wykłady:
 36. -
 37. -
 38. -
-39. Adam
+39. ~~Adam~~
 40. Szymon
 41. -
 -
