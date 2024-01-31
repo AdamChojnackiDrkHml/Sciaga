@@ -52,7 +52,7 @@ Wykłady:
 -
 43. -
 44. -
-45. Adam
+45. ~~Adam~~
 46. Szymon
 47. -
 48. Paweł
