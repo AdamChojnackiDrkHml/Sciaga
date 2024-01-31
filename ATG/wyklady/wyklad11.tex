@@ -1,0 +1,54 @@
+% \DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+% \DeclareMathSymbol{\notniFromTxfonts}{\mathrel}{symbolsC}{61}
+
+\begin{definicja}
+    Gracze $i,j\in P$ są \textbf{zamienni względem $v$} jeśli $(\forall S\subseteq P)((i,j\notin S)\rightarrow(v(S\cup\{i\})=v(S\cup\{j\})))$.
+    Gracz $i$ jest \textbf{nieistotny względem $v$} gdy $(\forall S\not\owns i)(v(S)=v(S\cup\{i\}))$.
+    Gracz $i$ ma \textbf{prawo veta} jeśli $v(P)\textbackslash \{i\}=0 \land v[\mathcal{P}(P)]\subset[0,\infty]$.
+    Jeśli $v[\mathcal{P}(P)\subset\{0,1\}]$, to $(N,v)$ jest \textbf{grą prostą}; 
+    równoważnie: gra koalicyjna jest prosta gdy $(\forall S\subseteq P)(v(S)\in\{0,1\})$.
+\end{definicja}
+\begin{fakt}
+    Koalicyjna gra prosta ma niepusty rdzeń IFF ma graczy z prawem veta. Składa się on wtedy z podziałów, gdzie gracze z prawem veta odstają sumaryczną wypłatę 1.
+\end{fakt}
+\begin{definicja}{\textbf{Rozwiązanie gry}}
+    Dla gry $(P,v)$ pewien zbiór podziałów $\Phi(v)$ zależny od wyboru $v$. 
+    Jeśli rozwiązaie jest 1-el., to $\Phi(v)$ nazywamy \textbf{wartością gry}, a $\Phi_i(v)$ wartością $i$-tego gracza.
+    % Czasami $\Phi$ jest postrzegane jako multifunkcja 
+\end{definicja}
+\begin{definicja}{\textbf{Wartość Shapleya (SV)}}
+    Wartość gry dla $i\in P$: $\Phi_i(v)=\sum\limits_{S\subseteq P\textbackslash\{i\}}{\frac{|S|!(|P\textbackslash S|-1)!}{|P|!}(v(S\cup\{i\})-v(S))}$
+    Mówi jaki jest średni wkład w siłę koalicyjną gracza $i$ po wszystkich możliwych liniowych porządkach dodawania pojedynczych graczy do koalicji.
+\end{definicja}
+\begin{fakt}
+    W grach wypukłych, wartość Shapleya jest w rdzeniu gry.
+\end{fakt}
+\begin{fakt}{\textbf{Własności SV}}
+    \textbf{Wydajność:} SV jest podziałem.
+    \textbf{Symetria:} Dla wszystkich $i,j$ zamiennych względem $v$ mamy $\Phi_i(v)=\Phi_j(v)$.
+    \textbf{Liniowość:} $\Phi_i(av+bw)=a\Phi_i(v)+b\Phi_i(w)$.
+    \textbf{Nieistotny gracz:} Jeśli $i$ nieistotny względem $v$, to $\Phi_i(v)=0$.
+    \textbf{Addytywność:} Gdy $v$ jest nad-addytywna, to $\Phi(v)$ indywiidualnie racjonalna; 
+    jeśli $v$ pod-addytywna, to $(\forall i) \Phi_i(v)\leq v(\{i\})$;
+    jeśli addytywna, zachodzi równość. \\
+    Zbiór pewnych cech, których używamy do predykcji możemy uznać za graczy. Siły koalicji będą
+wskazywały na jakość predykcji. Wtedy wartość Shapleya można użyć w kontekście analizy wariancji ANOVA, czy w machine
+learningu (np. LIME) Podobny model można wykorzystać w szeregach czasowych do zdefiniowania slidShap (X 2023), gdzie
+siły koalicyjne są wyznaczane przy pomocy entropii Shannona, a który to służy do predykcji przyszłych wartości ciągu
+wektorów losowych.
+\end{fakt}
+\begin{twierdzenie}{(Bondareva-Shapley)}
+    Dla gry koalicyjnej, posiadanie niepustego rdzeń jest równoważne z warunkiem: 
+    $(\forall i\in P) (\forall \alpha:\mathcal{P}(P)\rightarrow[0,1]) \left(\sum\limits_{S\owns i}{\alpha(S)=1} \right)\rightarrow \left(\sum\limits_S{\alpha(S)v(S)\leq v(P)} \right)$.
+\end{twierdzenie}
+\begin{definicja}{(\textbf{Indeksy siły Shapleya-Shubika i Banzhafa})}
+    Rozważmy prostą grę. $v(S)=1$ oznacza, że można uformować koalicję $S$, która będzie rządzić (wygrywać wybory). 
+    Zakładamy że $v(P)=1$, $v(\emptyset)=0$, $v$ niemalejąca, dla $S\subseteq P$ jesli $v(S)=1$ to $v(P\textbackslash S)=0$.
+    \textbf{Indeksem siły Shapleya-Shubika} $i$-tego gracza $Sh(i)$ jest wartość Shapleya $i$-tego gracza w takiej grze.
+    Niech $S\subseteq P$. Określamy $K(S)=\{i\in S: v(S)=1, v(S\textbackslash\{i\})=0\}$ - zbiór kluczowych koalicjantów w koalicji $S$.
+    \textbf{Indeksem Banzhafa} gracza $i$ nazywamy: $B(i)=\frac{|\{S\subseteq P: i\in K(S)\}|}{\sum\limits_{j\in P}|\{S\subseteq P: j\in K(S)\}|}$.
+    W grach prostych $\sum\limits_{i\in P}{Sh(i)} = \sum\limits_{i\in P}{B(i)} = 1$.
+\end{definicja}
+% TODO: DODAĆ UWAGĘ 79 (PARADOKS DE CONDORCETA)
+
+
