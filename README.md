@@ -15,7 +15,7 @@ Wykłady:
 11. Janusz
 
 ### MPA ZADANIA
-8. Szymon
+8. ~~Szymon~~
 9. Paweł
 10. - 
 11. -
