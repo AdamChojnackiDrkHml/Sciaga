@@ -19,7 +19,7 @@ Wykłady:
 9. ~~Paweł~~
 10. - 
 11. -
-12. Szymon
+12. ~~Szymon~~
 -
 14. ~~Paweł~~
 15. -
