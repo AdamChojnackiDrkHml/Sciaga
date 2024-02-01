@@ -58,7 +58,7 @@ Wykłady:
 48. Paweł
 49. -
 50. Paweł
-51. Adam
+51. ~~Adam~~
 52. -
 
 ### TOZO
