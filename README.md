@@ -16,17 +16,17 @@ Wykłady:
 
 ### MPA ZADANIA
 8. ~~Szymon~~
-9. Paweł
+9. ~~Paweł~~
 10. - 
 11. -
 12. Szymon
 -
-14. Paweł
+14. ~~Paweł~~
 15. -
 16. -
 17. -
 18. -
-19. Paweł
+19. ~~Paweł~~
 20. -
 21. Adam
 22. -
