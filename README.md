@@ -30,7 +30,7 @@ Wykłady:
 20. -
 21. Adam
 22. -
-23. Szymon
+23. ~~Szymon~~
 24. -
 25. -
 26. ~~Adam~~
