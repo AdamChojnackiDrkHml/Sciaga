@@ -11,8 +11,8 @@ Wykłady:
 7. ~~Szymon~~
 8. ~~Szymon~~
 9. ~~Szymon~~
-10. Janusz
-11. Janusz
+10. ~~Janusz~~
+11. ~~Janusz~~
 
 ### MPA ZADANIA
 8. ~~Szymon~~
