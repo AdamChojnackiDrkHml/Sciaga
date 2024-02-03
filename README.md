@@ -34,7 +34,7 @@ Wykłady:
 24. -
 25. -
 26. ~~Adam~~
-27. Adam
+27. ~~Adam~~
 28. ~~Adam~~
 29. ~~Adam~~
 30. ~~Szymon~~
