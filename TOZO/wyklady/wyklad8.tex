@@ -1,0 +1,55 @@
+\begin{definicja}
+    Rozważamy boolowskie funkcje logiczne $\{0,1\}^n\rightarrow\{0,1\}$, wyrażone w postaci sieci logicznych, jako kodowanie problemów decyzyjnych.
+    \textbf{Rozmiar} sieci logicznej to liczba bramek logicznych. 
+    \textbf{Głębokość} sieci to długość najdłuższej ścieżki od któregoś wejścia do wyjścia.
+\end{definicja}
+
+\begin{definicja}
+    \textbf{Rodzina} sieci to nieskończony ciąg $C=\{C_1,C_2\ldots\}$ sieci logicznych, gdzie $C_n$ ma $n$ zmiennych wejściowych.
+\end{definicja}
+
+\begin{definicja}
+    Język $L\subseteq\{0,1\}^*$ ma \textbf{sieci wielomianowe}, jeżeli istnieje rodzina sieci $C=\{C_1,C_2,\ldots\}$ taka, że
+    1) rozmiar $C_n$ jest równy co najwyżej wartości wielomianu $p(n)$;
+    2) $\forall_{x\in\{0,1\}^*}{x\in L \iff C_{|x|}(x)=1}$.
+\end{definicja}
+
+\begin{lemat}
+    Każdy język z klasy $P$ ma sieć wielomianową.
+\end{lemat}
+
+\begin{lemat}
+    Istnieją języki nierozstrzygalne posiadające sieci wielomianowe.
+\end{lemat}
+
+\begin{definicja}
+    Rodzinę sieci $C=\{C_1,C_2\ldots\}$ nazywamy \textbf{jednostajną}, jeżeli istnieje maszyna Turinga $N\in L$ taka, że 
+    dla wejścia $1^n$ generuje sieć $C_n$ (sieć musi mieć wielomianowy rozmiar w stosunku do $n$).
+\end{definicja}
+
+\begin{twierdzenie}
+    Język $L$ ma jednostajną rodzinę sieci $\iff L\in P$.
+\end{twierdzenie}
+
+\begin{definicja}
+    Niech $C$ jednostajna rodzina sieci i $f(n), g(n):\mathbb{N}\rightarrow\mathbb{N}$.
+    Mówimy, że \textbf{równoległy czas} rodziny $C$ wynosi $f(n)$, jeżeli dla każdego $n$ głębokość sieci $C_n$ nie przekracza $f(n)$.
+    Mówimy, że \textbf{całkowita praca} rodziny sieci $C$ wynosi $g(n)$, jeżeli dla każdego $n$ rozmiar sieci $C_n$ nie przekracza $g(n)$.
+\end{definicja}
+
+\begin{definicja}
+    $PT/WK(f(n), g(n))$ to klasa wszystkich języków $L\in\{0,1\}^*$ dla których istnieje jednostajna rodzina sieci $C$ 
+    rozstrzygająca $L$ w czasie $O(f(n))$ i wykonująca pracę $O(g(n))$.
+\end{definicja}
+
+\begin{lemat}
+    Jeżeli $L\in PT/WK(f(n),g(n))$, to istnieje maszyna Turinga $M\in L$ generująca program na maszynę $PRAM$
+    obliczającą $L$ w czasie $O(f(n))$ przy użyciu $O(g(n)/f(n))$ procesorów.
+\end{lemat}
+
+\begin{definicja}
+    Klasa \textbf{NC} - równoległe obliczenia w czasie polilogarytmicznym (z pracą wielomianową).
+    $NC_i = PT/WK(log^in, n^k)$
+    $NC = \bigcup_{i\in\mathbb{N}}{NC_i}$
+\end{definicja}
+
