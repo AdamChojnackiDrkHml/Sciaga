@@ -1,0 +1,51 @@
+\begin{definicja}
+    Niech $Q$ będzie wielomianowo zrównoważoną, wielomianowo rozstrzygalną relacją binarną. 
+    \textbf{Problem zliczania} związany z relacją $Q$ to następujące pytanie:
+    Ile istnieje dla zadanego $x$ różnych $y$ takich, że $(x,y)\in Q$?
+    (Wynik podajemy w postaci liczby binarnej.)
+\end{definicja}
+
+\begin{definicja}
+    Klasa \textbf{\#P} zawiera wszystkie problemy zliczania związane z wielomianowo zrównoważonymi, wielomianowo rozstrzygalnymi relacjami.
+\end{definicja}
+% TODO: podać przykład z \#Matching
+
+\begin{twierdzenie}
+    $NP\subseteq \#P$
+\end{twierdzenie}
+
+\begin{definicja}
+    Problem zliczający $A$ \textbf{redukuje się} do problemu $B$, jeśli istnieją funkcje $R,S\in L$ takie, że
+    1) $x\in A \iff R(x)\in B$,
+    2) $m$ jest odpowiedzią dla $R(x)$ w $B$ $\iff$ $S(m)$ jest odpowiedzią dla $x$ w $A$.
+\end{definicja}
+
+\begin{twierdzenie}
+    $\#SAT$ jest $\#P$-zupełny. (wystarczy zmodyfikować tw. Cook'a.)
+\end{twierdzenie}
+
+\begin{twierdzenie}
+    $\#HamiltonPath$ jest $\#P$-zupełny. (bo redukcja $3SAT$ do $HP$ była oszczędna.)
+\end{twierdzenie}
+
+\begin{twierdzenie}
+    $Permanent$ jest $\#P$-zupełny.
+\end{twierdzenie}
+
+\begin{twierdzenie}
+    $\#2SAT$ jest $\#P$-zupełny.
+\end{twierdzenie}
+
+\begin{definicja}
+    Klasa $\oplus P$ zawiera wszystkie problemy zliczania w których pytamy o nieparzystość liczby rozwiązań.
+\end{definicja}
+
+\begin{twierdzenie}
+    $\oplus SAT$ jest $\oplus P$-zupełny.
+\end{twierdzenie}
+
+\begin{lemat}
+    $\oplus P$ jest zamknięta na dopełnienie, tj. $\oplus P = co-\oplus P$.
+\end{lemat}
+
+
