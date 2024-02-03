@@ -56,7 +56,7 @@ Wykłady:
 46. Szymon
 47. -
 48. Paweł
-49. -
+49. ~~Adam~~
 50. Paweł
 51. ~~Adam~~
 52. -
