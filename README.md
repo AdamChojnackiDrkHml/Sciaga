@@ -59,7 +59,7 @@ Wykłady:
 49. ~~Adam~~
 50. ~~Paweł~~
 51. ~~Adam~~
-52. -
+52. ~~Adam~~
 
 ### TOZO
 Wykłady:
