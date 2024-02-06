@@ -40,7 +40,7 @@ Wykłady:
 30. ~~Szymon~~
 31. ~~Paweł~~
 32. -
-33. Janusz
+33. ~~Janusz~~
 34. ~~Paweł~~
 35. -
 36. -
