@@ -29,10 +29,10 @@ Wykłady:
 19. ~~Paweł~~
 20. -
 21. ~~Adam~~
-22. Janusz
+22. ~~Janusz~~
 23. ~~Szymon~~
 24. ~~Adam~~
-25. Janusz
+25. ~~Janusz~~
 26. ~~Adam~~
 27. ~~Adam~~
 28. ~~Adam~~
