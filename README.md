@@ -31,7 +31,7 @@ Wykłady:
 21. ~~Adam~~
 22. Janusz
 23. ~~Szymon~~
-24. Janusz
+24. ~~Adam~~
 25. Janusz
 26. ~~Adam~~
 27. ~~Adam~~
