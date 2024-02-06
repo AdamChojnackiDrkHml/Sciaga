@@ -3,7 +3,7 @@
 % uklad dokumentu
 \documentclass[8pt]{extarticle}
 \usepackage{xparse}
-\usepackage[margin=0pt]{geometry}
+\usepackage[margin=12pt]{geometry}
 \usepackage{enumerate} 
 \frenchspacing
 \linespread{0.5}
@@ -102,6 +102,12 @@
 \DeclareMathOperator{\Trail}{Trailing}
 \DeclareMathOperator{\fst}{First}
 \DeclareMathOperator{\fol}{Follow}
+\usepackage{draftwatermark}
+\usepackage{tikz}
+\SetWatermarkText{Paweł Polerowicz}
+\SetWatermarkAngle{60}
+\SetWatermarkScale{2.5}
+\SetWatermarkLightness{0.5}
 
 
 
@@ -112,7 +118,7 @@
 \def\columnseprulecolor{\color{black}}
 \begin{document}
 
-\begin{multicols*}{4}
+\begin{multicols*}{3}
     \input{wyklady/wyklad1}
     \input{wyklady/wyklad2}
     \input{wyklady/wyklad3}

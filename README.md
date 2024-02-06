@@ -41,7 +41,7 @@ Wykłady:
 31. ~~Paweł~~
 32. -
 33. Janusz
-34. Paweł
+34. ~~Paweł~~
 35. -
 36. -
 37. Janusz
@@ -57,7 +57,7 @@ Wykłady:
 47. -
 48. Paweł
 49. ~~Adam~~
-50. Paweł
+50. ~~Paweł~~
 51. ~~Adam~~
 52. -
 
